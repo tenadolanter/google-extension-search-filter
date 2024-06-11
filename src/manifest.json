@@ -2,14 +2,14 @@
   "manifest_version": 3,
   "version": "1.0.0",
   "name": "search-filtering",
-  "description": "简单的Chrome扩展demo",
+  "description": "browser search result filtering helps you clean up unnecessary search results",
   "action": {
     "default_icon": {
       "16": "assets/icon16.png",
       "24": "assets/icon24.png",
       "32": "assets/icon32.png"
     },
-    "default_title": "Click Me",
+    "default_title": "search-filtering",
     "default_popup": "popup.html"
   },
   "options_page": "options.html",
@@ -24,7 +24,7 @@
   "content_scripts": [
     {
       "js": [
-        "js/popup.js"
+        "js/filter.js"
       ],
       "css": [],
       "matches": [

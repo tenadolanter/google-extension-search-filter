@@ -22,8 +22,8 @@ export const utilAddRule = (ruleValue) => {
       } else if (filter.length && !isStringInArray(rule, filter)) {
         filter.push(filterItem);
       }
-      chrome.storage.sync.set({ filter: filter.join('|') });
       ElMessage('添加规则成功');
+      chrome.storage.sync.set({ filter: filter.join('|') });
       window.location.reload(true);
     });
   }
@@ -50,6 +50,9 @@ export const utilRuleList = () => {
   });
 };
 
+/**
+ * 移除指定index的规则配置
+ */
 export const utilRuleRemove = (index) => {
   chrome.storage.sync.get('filter', (data) => {
     if (data?.filter?.length > 0) {

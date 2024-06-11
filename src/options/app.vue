@@ -119,11 +119,9 @@ export default {
     }
   }
 }
-::v-deep {
-  .el-table thead {
-    font-weight: bold;
-    color: #606c76;
-    font-size: 16px;
-  }
+:deep(.el-table thead) {
+  font-weight: bold;
+  color: #606c76;
+  font-size: 16px;
 }
 </style>

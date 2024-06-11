@@ -1,11 +1,11 @@
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from 'node:url';
 import { resolve } from 'path';
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,17 +18,17 @@ export default defineConfig({
           dest: './'
         },
         {
-          src: 'src/plugins/manifest.json',
+          src: 'src/manifest.json',
           dest: './'
-        },
+        }
       ]
     }),
     AutoImport({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver()]
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
-    }),
+      resolvers: [ElementPlusResolver()]
+    })
   ],
   resolve: {
     alias: {
@@ -40,13 +40,14 @@ export default defineConfig({
       input: {
         popup: resolve(__dirname, 'popup.html'),
         options: resolve(__dirname, 'options.html'),
-        background: resolve(__dirname, 'src/background/main.js'),
+        background: resolve(__dirname, 'src/background.js'),
+        filter: resolve(__dirname, 'src/filter.js')
       },
       output: {
         entryFileNames: 'js/[name].js',
         chunkFileNames: 'js/[name].js',
         assetFileNames: 'assets/[name].[ext]'
       }
-    },
-  },
-})
+    }
+  }
+});

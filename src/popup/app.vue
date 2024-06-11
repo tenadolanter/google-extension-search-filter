@@ -19,6 +19,7 @@
 
 <script>
 import pkg from '../../package.json'
+import { utilAddRule, utilOpenOptions } from '../utils.js'
 export default {
   data() {
     return {
@@ -28,12 +29,10 @@ export default {
   },
   methods: {
     handlerNewRule() {
-      if (!this.rule) {
-        console.log(1111)
-      }
+      utilAddRule(this.rule)
     },
     handlerClickConsole() {
-      chrome.runtime.openOptionsPage(function () {})
+      utilOpenOptions()
     }
   }
 }

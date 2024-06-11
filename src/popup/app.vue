@@ -5,14 +5,14 @@
       <div class="version">{{ pkg.version }}</div>
     </div>
     <div class="body">
-      <div>这是一个屏蔽垃圾搜索结果的扩展程序，感谢你的安装。规则添加示例：</div>
+      <div>这是一个屏蔽垃圾搜索结果的扩展程序，感谢你的安装。你可以通过如下方式添加规则：</div>
       <div>1. 屏蔽 *.example.com ，输入 example.com</div>
       <div>2. 屏蔽 prefix.example.com/* ，输入 prefix.example.com</div>
     </div>
     <div class="footer">
-      <el-input class="footer-input" v-model="input" placeholder="输入规则"></el-input>
-      <el-button class="footer-btn" type="primary">添加规则</el-button>
-      <el-button class="footer-btn" type="info">控制面板</el-button>
+      <el-input class="footer-input" v-model="rule" placeholder="输入规则"></el-input>
+      <el-button class="footer-btn" type="primary" @click="handlerNewRule">添加规则</el-button>
+      <el-button class="footer-btn" type="info" @click="handlerClickConsole">控制面板</el-button>
     </div>
   </div>
 </template>
@@ -23,7 +23,17 @@ export default {
   data() {
     return {
       pkg,
-      input: ''
+      rule: ''
+    }
+  },
+  methods: {
+    handlerNewRule() {
+      if (!this.rule) {
+        console.log(1111)
+      }
+    },
+    handlerClickConsole() {
+      chrome.runtime.openOptionsPage(function () {})
     }
   }
 }

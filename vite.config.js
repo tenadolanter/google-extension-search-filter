@@ -3,6 +3,9 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { viteStaticCopy } from 'vite-plugin-static-copy';
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,7 +22,13 @@ export default defineConfig({
           dest: './'
         },
       ]
-    })
+    }),
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
+    }),
   ],
   resolve: {
     alias: {
@@ -30,6 +39,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         popup: resolve(__dirname, 'popup.html'),
+        options: resolve(__dirname, 'options.html'),
         background: resolve(__dirname, 'src/background/main.js'),
       },
       output: {

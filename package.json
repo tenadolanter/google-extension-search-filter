@@ -4,22 +4,19 @@
   "description": "browser search result filtering helps you clean up unnecessary search results",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/tenadolanter/search-filtering.git"
+    "url": "git+ssh://git@github.com/tenadolanter/google-extension-search-filter.git"
   },
   "author": "",
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
   },
   "dependencies": {
     "element-plus": "^2.7.5",
-    "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "vue": "^3.4.21"
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",
@@ -37,7 +34,7 @@
     "vite-plugin-static-copy": "^1.0.5"
   },
   "bugs": {
-    "url": "https://github.com/tenadolanter/search-filtering/issues"
+    "url": "https://github.com/tenadolanter/google-extension-search-filter/issues"
   },
-  "homepage": "https://github.com/tenadolanter/search-filtering#readme"
+  "homepage": "https://github.com/tenadolanter/google-extension-search-filter#readme"
 }

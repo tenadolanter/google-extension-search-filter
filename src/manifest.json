@@ -17,20 +17,12 @@
     "page": "options.html",
     "open_in_tab": true
   },
-  "permissions": [
-    "activeTab",
-    "storage"
-  ],
+  "permissions": ["activeTab", "storage"],
   "content_scripts": [
     {
-      "js": [
-        "js/filter.js"
-      ],
+      "js": ["js/filter.js"],
       "css": [],
-      "matches": [
-        "http://*/*",
-        "https://*/*"
-      ],
+      "matches": ["http://*/*", "https://*/*"],
       "run_at": "document_end"
     }
   ],

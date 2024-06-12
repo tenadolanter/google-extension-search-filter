@@ -18,24 +18,24 @@
 </template>
 
 <script>
-import pkg from '../../package.json'
-import { utilAddRule, utilOpenOptions } from '../utils.js'
+import pkg from '../../package.json';
+import { utilAddRule, utilOpenOptions } from '../utils.js';
 export default {
   data() {
     return {
       pkg,
       rule: ''
-    }
+    };
   },
   methods: {
     handlerNewRule() {
-      utilAddRule(this.rule)
+      utilAddRule(this.rule);
     },
     handlerClickConsole() {
-      utilOpenOptions()
+      utilOpenOptions();
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
